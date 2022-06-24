@@ -4,20 +4,17 @@ const findAllTarefaController = (req, res) => {
   res.send(tarefas);
 };
 
-
 const findByIdTarefaController = (req, res) => {
   const parametroId = req.params.id;
   const escolhaTarefa = tarefaServices.findByIdTarefaServices(parametroId);
   res.send(escolhaTarefa);
 };
 
-
 const createTarefaController = (req, res) => {
   const tarefa = req.body;
   const novaTarefa = tarefaServices.createTarefaServices(tarefa);
   res.send(novaTarefa);
 };
-
 
 const updateTarefaController = (req, res) => {
   const idParam = +req.params.id;
@@ -29,30 +26,16 @@ const updateTarefaController = (req, res) => {
   res.send(updateTarefa);
 };
 
-
 const deleteTarefaController = (req, res) => {
-    const idParam = req.params.id;
-    tarefaServices.deleteTarefaServices(idParam);
-    res.send({ message: 'Tarefa deletada com sucesso!'});
+  const idParam = req.params.id;
+  tarefaServices.deleteTarefaServices(idParam);
+  res.send({ message: 'Tarefa deletada com sucesso!' });
 };
 
 module.exports = {
-    findByIdTarefaController,
-    createTarefaController,
-    updateTarefaController,
-    deleteTarefaController,
-    findAllTarefaController
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+  findByIdTarefaController,
+  createTarefaController,
+  updateTarefaController,
+  deleteTarefaController,
+  findAllTarefaController,
+};
